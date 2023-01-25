@@ -1,0 +1,77 @@
+const cards = [
+    {
+        name: "CodePen",
+        link: "https://codepen.io/imchriskitchens/",
+        image: {
+            src: "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png",
+            alt: ''
+        }
+    },
+    {
+        name: "CSS-Tricks",
+        link: "https://css-tricks.com/",
+        image: {
+            src: "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png",
+            alt: ''
+        }
+    },
+    {
+        name: "ProductHunt",
+        link: "https://www.producthunt.com/makers",
+        image: {
+            src: "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png",
+            alt: ''
+        }
+    },
+    {
+        name: "Twitter",
+        link: "https://twitter.com/imchriskitchens",
+        image: {
+            src: "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png",
+            alt: ''
+        }
+    },
+    {
+        name: "Material Design",
+        link: "https://material.io/",
+        image: {
+            src: "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png",
+            alt: ''
+        }
+    },
+    {
+        name: "MDN",
+        link: "https://developer.mozilla.org",
+        image: {
+            src: "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png",
+            alt: ''
+        }
+    },
+    {
+        name: "GitHub",
+        link: "https://github.com/imchriskitchens",
+        image: {
+            src: "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png",
+            alt: ''
+        }
+    },
+    {
+        name: "Notion",
+        link: "https://www.notion.so/",
+        image: {
+            src: "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png",
+            alt: ''
+        }
+    },
+];
+
+const fragment = document.getElementById('card-template');
+
+cards.forEach(({ name, link, image }) => {
+  const instance = document.importNode(fragment.content, true);
+  instance.querySelector('[data-name]').textContent = name;
+  instance.querySelector('[data-link]').href = link;
+  instance.querySelector('[data-image]').src = image.src;
+  instance.querySelector('[data-image]').alt = image.alt;
+  main.appendChild(instance);
+});
